@@ -18,7 +18,16 @@ const router = createRouter({
     routes: [
         // { path: "/", component: Home},
         // redirect 重定向
-        // { path: "/",redirect: "/home"},
+        { 
+            path: "/",
+            redirect: "/home"
+        },
+        {
+            //如果匹配错误路径显示错误组件  
+            ///:pathMatch(.*)*     后面加*会解析成数组
+            path:"/:pathMatch(.*)",
+            component:() => import("../components/NoFound.vue")
+        },
         {
             path: "/home", 
             component: Home
@@ -29,7 +38,7 @@ const router = createRouter({
         },
         {
             path: "/user/:id",
-            component:import("../components/User.vue")
+            component:() => import("../components/User.vue")
         }
     ]
 })
