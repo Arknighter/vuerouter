@@ -14,4 +14,13 @@
     h3 {
         color: red;
     }
+    .img{
+        height: 600px;
+        width: 600px;
+    }
+    img{
+        height: auto;
+        width: 100%;
+      
+    }
 </style>
